@@ -1,0 +1,21 @@
+version: "3"
+services:
+  vendor-portal:
+    image: manjunathnp/selenium
+    environment:
+    - BROWSER
+    - HUB_HOST=hub
+    - THREAD_COUNT=1
+    - TEST_SUITE=VendorPortalTest.xml
+    volumes:
+    - ./docker-output/vendor-portal:/home/selenium-docker/test-output 
+  flight-reservation:
+    image: manjunathnp/selenium
+    environment:
+    - BROWSER
+    - HUB_HOST=hub
+    - THREAD_COUNT=1
+    - TEST_SUITE=FlightsReservationTest.xml
+    volumes:
+    - ./docker-output/flight-reservation:/home/selenium-docker/test-output     
+
